@@ -27,7 +27,6 @@ class NewsResource extends JsonResource
             'text' => $this->text,
             'content_id' => $this->content_id,
             'media_id' => $this->media_id,
-
         ];
     }
 }

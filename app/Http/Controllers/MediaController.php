@@ -18,7 +18,6 @@ class MediaController extends Controller
         $attributes = $request->validated();
         $media = Media::create($attributes);
         return new MediaResource($media);
-
     }
 
     /**
@@ -32,7 +31,6 @@ class MediaController extends Controller
         $media->update($attributes);
         return new MediaResource($media);
     }
-
 
     /**
      * @param Media $media
@@ -50,6 +48,5 @@ class MediaController extends Controller
     public function delete(Media $media)
     {
         $media->delete();
-
     }
 }

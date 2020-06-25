@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @property Content content
  * @property Media media
- *
  */
 class News extends Model
 {
@@ -47,5 +46,4 @@ class News extends Model
     {
         return $this->hasOne(Media::class);
     }
-
 }

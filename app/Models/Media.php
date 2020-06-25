@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -11,6 +12,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int id
  * @property string media_path
+ *
+ * @property Carbon created_date
+ * @property Carbon updated_date
  */
 class Media extends Model
 {
@@ -18,6 +22,7 @@ class Media extends Model
      * @var string
      */
     protected $table = 'media';
+
     /**
      * @var array
      */

@@ -24,7 +24,6 @@ class MediaResource extends JsonResource
         return [
             'id' => $this->id,
             'media_path' => $this->media_path,
-
         ];
     }
 }

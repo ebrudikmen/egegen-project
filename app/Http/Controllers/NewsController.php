@@ -10,8 +10,6 @@ use Exception;
 
 class NewsController extends Controller
 {
-
-
     /**
      * @param StoreOrUpdateRequest $request
      * @return NewsResource
@@ -21,7 +19,6 @@ class NewsController extends Controller
         $attributes = $request->validated();
         $news = News::create($attributes);
         return new NewsResource($news);
-
     }
 
     /**
@@ -35,7 +32,6 @@ class NewsController extends Controller
         $news->update($attributes);
         return new NewsResource($news);
     }
-
 
     /**
      * @param News $news
@@ -53,6 +49,5 @@ class NewsController extends Controller
     public function delete(News $news)
     {
         $news->delete();
-
     }
 }

@@ -15,13 +15,9 @@ class ContentController extends Controller
      */
     public function store(StoreOrUpdateRequest $request): ContentResource
     {
-
         $attributes = $request->validated();
-
         $content = Content::create($attributes);
-
         return new ContentResource($content);
-
     }
 
     /**
@@ -35,7 +31,6 @@ class ContentController extends Controller
         $content->update($attributes);
         return new ContentResource($content);
     }
-
 
     /**
      * @param Content $content
