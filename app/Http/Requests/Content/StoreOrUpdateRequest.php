@@ -25,7 +25,7 @@ class StoreOrUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-
+            'text' => 'required|string',
         ];
     }
 }

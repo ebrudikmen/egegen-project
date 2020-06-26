@@ -6,6 +6,8 @@ use App\Http\Requests\Media\StoreOrUpdateRequest;
 use App\Http\Resources\MediaResource;
 use App\Models\Media;
 use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class MediaController extends Controller
 {
@@ -48,5 +50,16 @@ class MediaController extends Controller
     public function delete(Media $media)
     {
         $media->delete();
+    }
+
+    /**
+     * @param Request $request
+     * @return AnonymousResourceCollection
+     */
+    public function index(Request $request): AnonymousResourceCollection
+    {
+        $query = Media::query();
+        $media = $query->paginate();
+        return MediaResource::collection($media);
     }
 }

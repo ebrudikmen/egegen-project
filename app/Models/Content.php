@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int id
  * @property string name
+ * @property string text
  *
  * @property Carbon created_date
  * @property Carbon updated_date
@@ -26,5 +27,5 @@ class Content extends Model
     /**
      * @var array
      */
-    protected $fillable = ["name"];
+    protected $fillable = ["name", "text"];
 }

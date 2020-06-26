@@ -2,16 +2,16 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Content;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * Class ContentResource
+ * Class MenuResource
  * @package App\Http\Resources
- * @mixin Content
+ * @mixin Menu
  */
-class ContentResource extends JsonResource
+class MenuResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -24,7 +24,6 @@ class ContentResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'text' => $this->text,
         ];
     }
 }

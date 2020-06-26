@@ -6,6 +6,8 @@ use App\Http\Requests\Content\StoreOrUpdateRequest;
 use App\Http\Resources\ContentResource;
 use App\Models\Content;
 use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ContentController extends Controller
 {
@@ -48,6 +50,16 @@ class ContentController extends Controller
     public function delete(Content $content)
     {
         $content->delete();
+    }
 
+    /**
+     * @param Request $request
+     * @return AnonymousResourceCollection
+     */
+    public function index(Request $request): AnonymousResourceCollection
+    {
+        $query = Content::query();
+        $content = $query->paginate();
+        return ContentResource::collection($content);
     }
 }

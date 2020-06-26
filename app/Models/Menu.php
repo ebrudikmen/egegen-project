@@ -6,27 +6,25 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class News
+ * Class Menu
  * @package App\Models
  * @mixin Eloquent
+ *
  * @property int id
- * @property string title
- * @property string text
- * @property int content_id
- * @property int media_id
+ * @property string name
  *
  * @property Carbon created_date
  * @property Carbon updated_date
  */
-class News extends Model
+class Menu extends Model
 {
     /**
      * @var string
      */
-    protected $table = 'news';
+    protected $table = 'menu';
 
     /**
      * @var array
      */
-    protected $fillable = ["title", "text"];
+    protected $fillable = ["name"];
 }

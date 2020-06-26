@@ -6,7 +6,8 @@ use App\Http\Requests\News\StoreOrUpdateRequest;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Exception;
-
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class NewsController extends Controller
 {
@@ -49,5 +50,16 @@ class NewsController extends Controller
     public function delete(News $news)
     {
         $news->delete();
+    }
+
+    /**
+     * @param Request $request
+     * @return AnonymousResourceCollection
+     */
+    public function index(Request $request): AnonymousResourceCollection
+    {
+        $query = News::query();
+        $news = $query->paginate();
+        return NewsResource::collection($news);
     }
 }

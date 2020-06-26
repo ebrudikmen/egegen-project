@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\News;
+namespace App\Http\Requests\Menu;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,8 +24,7 @@ class StoreOrUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:255',
-            'text' => 'required|string',
+            'name' => 'required|string|max:255',
         ];
     }
 }

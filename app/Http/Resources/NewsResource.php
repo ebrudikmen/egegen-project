@@ -25,8 +25,6 @@ class NewsResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'text' => $this->text,
-            'content_id' => $this->content_id,
-            'media_id' => $this->media_id,
         ];
     }
 }
